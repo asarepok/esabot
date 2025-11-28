@@ -11,11 +11,15 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-load_dotenv(override=True)
+load_dotenv()
 
 
 def main():
-    application = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
+    bot_token = os.getenv("BOT_TOKEN")
+    if not bot_token:
+        raise ValueError("Bot can not start the BOT_TOKEN environment variable is not set!")
+    
+    application = ApplicationBuilder().token(bot_token).build()
 
     application.add_handlers(HANDLERS)
 
