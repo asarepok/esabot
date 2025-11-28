@@ -1,5 +1,5 @@
 from telegram.ext import CommandHandler
-import callbacks
+from . import callbacks
 
 HANDLERS = [
     CommandHandler('start', callbacks.start)
