@@ -11,7 +11,9 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-load_dotenv()
+
+if not os.getenv("RAILWAY_ENVIRONMENT_NAME"):
+    load_dotenv()
 
 
 def main():
