@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
-from ..locales import l
+from locales import l
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
