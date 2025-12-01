@@ -30,4 +30,5 @@ def l(key: str, lang: str = "en", **kwargs) -> str:
     except KeyError:
         logging.error(f"The local {lang}.json does not have a {key} key.")
 
+    print(chevron.render(raw_str, data=kwargs))
     return chevron.render(raw_str, kwargs).strip()
