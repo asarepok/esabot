@@ -256,7 +256,6 @@ dependencies = [
     { name = "aiohttp" },
     { name = "asyncpg" },
     { name = "pydantic-settings" },
-    { name = "python-dotenv" },
     { name = "python-telegram-bot" },
     { name = "tortoise-orm" },
 ]
@@ -267,7 +266,6 @@ requires-dist = [
     { name = "aiohttp", specifier = ">=3.13.5" },
     { name = "asyncpg", specifier = ">=0.31.0" },
     { name = "pydantic-settings", specifier = ">=2.14.1" },
-    { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "python-telegram-bot", specifier = ">=22.7" },
     { name = "tortoise-orm", specifier = ">=0.25.4" },
 ]
