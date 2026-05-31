@@ -83,6 +83,17 @@ Apply future migrations:
 aerich upgrade
 ```
 
+
+### Run Tests
+
+Before starting the application, ensure all tests pass:
+
+```bash
+
+pytest
+
+```
+
 ### Start Application
 
 ```bash

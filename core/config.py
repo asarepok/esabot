@@ -1,4 +1,3 @@
-from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from core.enums import BotMode, Environment, LogLevel
 
@@ -40,9 +39,4 @@ class Settings(BaseSettings):
         return self.bot_mode == BotMode.WEBHOOK
 
 
-# create an cache pydantic settings object
-@lru_cache
-def get_settings() -> Settings:
-    return Settings()
-
-settings = get_settings()
+settings = Settings()
