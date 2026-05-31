@@ -69,7 +69,15 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-### Run Migrations
+### Configure Database
+
+Initialize the database:
+
+```bash
+aerich init-db
+```
+
+Apply future migrations:
 
 ```bash
 aerich upgrade
