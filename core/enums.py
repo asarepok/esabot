@@ -14,3 +14,16 @@ class LogLevel(StrEnum):
     INFO = "INFO"
     WARNING = "WARNING"
     ERROR = "ERROR"
+
+class Role(StrEnum):
+    STUDENT = "student"
+    ADMIN = "admin"
+    ROOT = "root"
+
+class MaterialType(StrEnum):
+    SLIDES = "slides"
+    PAST_QUESTIONS = "past_questions"
+    COURSE_OUTLINE = "course_outline"
+    TIMETABLE = "timetable"
+    BOOK = "book"
+    OTHER = "other"
