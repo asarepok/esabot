@@ -4,11 +4,11 @@ from core.enums import Role
 
 
 class User(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     telegram_id = fields.BigIntField(unique=True)
 
-    programme = fields.ForeignKeyField("models.Programme", related_name="users", on_delete=fields.SET_NULL)
-    level = fields.ForeignKeyField("models.Level", related_name="users", on_delete=fields.SET_NULL)
+    programme = fields.ForeignKeyField("models.Programme", related_name="users", on_delete=fields.SET_NULL, null=True)
+    level = fields.ForeignKeyField("models.Level", related_name="users", on_delete=fields.SET_NULL, null=True)
 
     onboarded = fields.BooleanField(default=False)
     role = fields.CharEnumField(Role, default=Role.STUDENT)

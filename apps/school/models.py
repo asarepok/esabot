@@ -4,7 +4,7 @@ from tortoise.models import Model
 
 
 class School(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     name = fields.CharField(max_length=255)
     created_at = fields.DatetimeField(auto_now_add=True)
 
@@ -14,7 +14,7 @@ class School(Model):
 
 
 class Faculty(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     school = fields.ForeignKeyField("models.School",related_name="faculties",on_delete=fields.CASCADE)
     name = fields.CharField(max_length=255)
     created_at = fields.DatetimeField(auto_now_add=True)
@@ -28,7 +28,7 @@ class Faculty(Model):
 
 
 class Programme(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     faculty = fields.ForeignKeyField("models.Faculty", related_name="programmes", on_delete=fields.CASCADE)
     name = fields.CharField(max_length=255)
     level_count = fields.IntField()
@@ -44,7 +44,7 @@ class Programme(Model):
 
 
 class Level(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     programme = fields.ForeignKeyField("models.Programme", related_name="levels", on_delete=fields.CASCADE)
     number = fields.IntField()
     created_at = fields.DatetimeField(auto_now_add=True)
@@ -58,7 +58,7 @@ class Level(Model):
 
 
 class Course(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     programme = fields.ForeignKeyField("models.Programme", related_name="courses", on_delete=fields.CASCADE)
     level = fields.ForeignKeyField("models.Level", related_name="courses", on_delete=fields.CASCADE)
     code = fields.CharField(max_length=50, null=True)

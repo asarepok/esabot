@@ -4,7 +4,7 @@ from core.enums import MaterialType
 
 
 class Material(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
 
     course = fields.ForeignKeyField("models.Course", related_name="materials", on_delete=fields.CASCADE)
     uploaded_by = fields.ForeignKeyField("models.User", related_name="uploaded_materials", on_delete=fields.SET_NULL, null=True)
